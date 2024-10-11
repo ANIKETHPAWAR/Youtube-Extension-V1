@@ -13,7 +13,7 @@ body {
   }
   #comments {
     max-height: 300px;
-    max-width: 100%;
+    max-width: 100%; 
     overflow-y: auto;
     background-color: #f9f9f9;
     padding: 10px;
