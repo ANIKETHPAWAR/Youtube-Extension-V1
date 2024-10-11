@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YouTube Comment Search</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+      input, button {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 8px;
+      }
+      #comments {
+        max-height: 300px;
+        overflow-y: auto;
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>YouTube Comment Search</h1>
+    <input type="text" id="videoUrl" placeholder="Enter YouTube Video URL" />
+    <input type="text" id="query" placeholder="Search keyword in comments" />
+    <button id="searchButton">Search Comments</button>
+    <div id="comments"></div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
