@@ -36,8 +36,9 @@ function searchComments(videoId, query) {
         commentsDiv.innerHTML = 'No comments found.';
       } else {
         filteredComments.forEach(comment => {
+          const highlightedComment = highlightKeyword(comment, query); // Highlight the keyword in the comment
           const p = document.createElement('p');
-          p.textContent = comment;
+          p.innerHTML = highlightedComment; // Set the HTML content with the highlighted keyword
           commentsDiv.appendChild(p);
         });
       }
@@ -46,4 +47,11 @@ function searchComments(videoId, query) {
       commentsDiv.innerHTML = 'Error fetching comments.';
       console.error(err);
     });
+}
+
+// Function to highlight the keyword in the comment
+function highlightKeyword(comment, keyword) {
+  const regex = new RegExp(`(${keyword})`, 'gi'); 
+  const highlighted = comment.replace(regex, '<span style="background-color: orange; ">$1</span>'); 
+  return highlighted;
 }
